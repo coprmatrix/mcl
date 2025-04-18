@@ -2,7 +2,7 @@
   <service name="obs_scm">
     <param name="scm">git</param>
     <param name="url">https://github.com/azahar-emu/mcl.git</param>
-    <param name="versionformat">1.0_git%cd</param>
+    <param name="versionformat">1.0_git%ct</param>
     <param name="revision">main</param>
     <param name="changesgenerate">enable</param>
   </service>
