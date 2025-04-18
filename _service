@@ -1,0 +1,16 @@
+<services>
+  <service name="obs_scm">
+    <param name="scm">git</param>
+    <param name="url">https://github.com/azahar-emu/mcl.git</param>
+    <param name="versionformat">1.0_git%cd</param>
+    <param name="revision">main</param>
+    <param name="changesgenerate">enable</param>
+  </service>
+  <service name="tar" mode="buildtime"/>
+  <service name="recompress" mode="buildtime">
+    <param name="file">*.tar</param>
+    <param name="compression">bz2</param>
+  </service>
+  <service name="set_version"/>
+  <!--service name="download_files"/-->
+</services>
