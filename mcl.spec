@@ -29,13 +29,11 @@ Summary: %{summary}.
 %autosetup
 
 %build
-%cmake
+%cmake -DCMAKE_INSTALL_LIBDIR=%{_libdir} -DCMAKE_INSTALL_INCLUDEDIR=%{_includedir}
 %cmake_build
 
 %install
 %cmake_install
-mkdir -pv `dirname %{buildroot}/%{_libdir}`
-mv -Tv %{buildroot}/usr/lib %{buildroot}/%{_libdir}
 mv -Tv %{buildroot}/%{_libdir}/lib%{name}.so{,.0}
 ln -sTfv lib%{name}.so.0 %{buildroot}/%{_libdir}/lib%{name}.so
 
